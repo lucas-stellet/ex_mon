@@ -1,7 +1,7 @@
 defmodule ExMon.Game do
   @moduledoc false
-
   use Agent
+
   @module_name __MODULE__
 
   def start(computer, player) do
