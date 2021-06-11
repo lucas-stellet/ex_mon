@@ -14,5 +14,11 @@ defmodule ExMon.Game do
     Agent.get(@module_name, & &1)
   end
 
-  def player, do: Map.get(info(), :player)
+  def update(state) do
+    Agent.update(@module_name, fn _ -> state end)
+  end
+
+  def fetch_player(player), do: Map.get(info(), player)
+
+  def turn, do: Map.get(info(), :turn)
 end
